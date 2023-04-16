@@ -5,7 +5,7 @@ import { SessionProvider } from "next-auth/react";
 import { api } from "~/utils/api";
 
 import "~/styles/globals.css";
-import { UniversalCounterProvider } from "~/contexts";
+import { ScreenshotProvider, UniversalCounterProvider } from "~/contexts";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -14,7 +14,9 @@ const MyApp: AppType<{ session: Session | null }> = ({
   return (
     <SessionProvider session={session}>
       <UniversalCounterProvider>
-        <Component {...pageProps} />
+        <ScreenshotProvider>
+          <Component {...pageProps} />
+        </ScreenshotProvider>
       </UniversalCounterProvider>
     </SessionProvider>
   );
