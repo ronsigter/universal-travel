@@ -1,4 +1,10 @@
-export const PLANETS = [
+type PlanetType = {
+  name: string;
+  size: [string, string];
+  color: string;
+};
+
+export const PLANETS: PlanetType[] = [
   {
     name: "Sun",
     size: ["h-[200px]", "w-[200px]"],

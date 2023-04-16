@@ -5,7 +5,7 @@ export const Legend: React.FC = () => {
   const { totalValue } = useUniversalCounter();
 
   return (
-    <div className="absolute right-10 top-10">
+    <div className="">
       <h3 className="text- mb-3 text-center text-2xl text-white">
         Universe Level {totalValue}
       </h3>
