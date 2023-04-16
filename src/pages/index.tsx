@@ -1,6 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import { Legend, Planet } from "~/components";
+import { Legend, Planet, ShamelessPlug } from "~/components";
 import { useScreenshot } from "~/contexts";
 import { PLANETS } from "~/helpers";
 
@@ -18,6 +18,7 @@ const Home: NextPage = () => {
         className="h-screen bg-gradient-to-b from-[#151317] to-[#15162c]"
         ref={setComponentRef}
       >
+        <ShamelessPlug />
         <div className="container m-auto flex h-full flex-col justify-center gap-4 md:flex-row">
           <div className="flex items-center justify-center py-10 md:w-[370px]">
             <Legend />
