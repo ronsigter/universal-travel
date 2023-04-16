@@ -1,15 +1,24 @@
 import { LEGENDS } from "~/helpers";
 
 interface DropdownProps {
-  name: string;
+  label: string;
   onChange: (data: { color: string; level: number }) => void;
+  isOpen: boolean;
 }
 
-export const Dropdown: React.FC<DropdownProps> = ({ name, onChange }) => {
+export const Dropdown: React.FC<DropdownProps> = ({
+  label,
+  onChange,
+  isOpen,
+}) => {
+  const display = isOpen ? "flex" : "hidden";
+
   return (
-    <div className="absolute left-10 top-10 z-50 flex w-52 flex-col overflow-hidden rounded-2xl border-2 bg-white">
+    <div
+      className={`${display} absolute left-10 top-10 z-50  w-52 flex-col overflow-hidden rounded-2xl border-2 bg-white`}
+    >
       <div className="flex justify-center py-2">
-        <span className="text-lg font-bold">{name}</span>
+        <span className="text-lg font-bold">{label}</span>
       </div>
       {LEGENDS.map(({ name, color, level }) => (
         <button

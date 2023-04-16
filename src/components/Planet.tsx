@@ -32,7 +32,7 @@ export const Planet: React.FC<Planet> = (props) => {
       ref={planetRef}
     >
       <span className="absolute -top-8 font-bold text-slate-50">{name}</span>
-      {isOpen && <Dropdown name={name} onChange={handleOnChange} />}
+      <Dropdown isOpen={isOpen} label={name} onChange={handleOnChange} />
     </div>
   );
 };
