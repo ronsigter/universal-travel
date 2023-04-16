@@ -1,6 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import { Legend, Planet, ShamelessPlug } from "~/components";
+import { Legend, Planet, SEO, ShamelessPlug } from "~/components";
 import { useScreenshot } from "~/contexts";
 import { PLANETS } from "~/helpers";
 
@@ -9,9 +9,10 @@ const Home: NextPage = () => {
 
   return (
     <>
+      <SEO />
       <Head>
-        <title>Solar Traveller</title>
-        <meta name="description" content="Just a meme site for travellers" />
+        <title>Universal Traveller</title>
+        <meta name="description" content="Travel page for astronauts" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main
