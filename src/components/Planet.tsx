@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { Dropdown } from "./Dropdown";
 import { useOnClickOutside } from "~/hooks/useOnClickOutside";
+import { useUniversalCounter } from "~/contexts";
 
 interface Planet {
   color: string;
@@ -15,9 +16,11 @@ export const Planet: React.FC<Planet> = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [levelColor, setLevelColor] = useState({ color, level: 0 });
   const planetRef = useRef<HTMLDivElement>(null);
+  const { changePlanetValue } = useUniversalCounter();
 
   const handleOnChange: HandleOnChangeProps = ({ color, level }) => {
     setLevelColor({ color, level });
+    changePlanetValue({ planet: name, value: level });
   };
 
   useOnClickOutside(planetRef, () => {

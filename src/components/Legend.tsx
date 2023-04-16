@@ -1,10 +1,13 @@
+import { useUniversalCounter } from "~/contexts";
 import { LEGENDS } from "~/helpers";
 
 export const Legend: React.FC = () => {
+  const { totalValue } = useUniversalCounter();
+
   return (
     <div className="absolute right-10 top-10">
       <h3 className="text- mb-3 text-center text-2xl text-white">
-        Universe Level 0
+        Universe Level {totalValue}
       </h3>
       <div className="flex flex-col gap-2 rounded-lg border-4 border-slate-500 bg-white p-6">
         {LEGENDS.map(({ color, name, level }) => (
