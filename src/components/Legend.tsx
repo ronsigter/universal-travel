@@ -1,11 +1,12 @@
 import { useUniversalCounter } from "~/contexts";
 import { LEGENDS } from "~/helpers";
+import { SaveImage } from "./SaveImage";
 
 export const Legend: React.FC = () => {
   const { totalValue } = useUniversalCounter();
 
   return (
-    <div className="">
+    <div className="flex flex-col justify-center">
       <h3 className="text- mb-3 text-center text-2xl text-white">
         Universe Level {totalValue}
       </h3>
@@ -18,6 +19,7 @@ export const Legend: React.FC = () => {
           </div>
         ))}
       </div>
+      <SaveImage />
     </div>
   );
 };
